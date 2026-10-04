@@ -20,7 +20,7 @@ import { EventDetailModal } from './components/EventDetailModal';
 import { Save, Loader2, CheckCircle2, Eye, Undo2, Redo2 } from 'lucide-react';
 
 export function App() {
-  const { user, userProfile, loading: authLoading, refreshProfile } = useAuth();
+  const { user, userProfile, loading: authLoading, error: authError, refreshProfile } = useAuth();
   const { team, loading: teamLoading, refresh: refreshTeam } = useTeam(user, userProfile);
   const [activeTab, setActiveTab] = useState<NavTab>('home');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
@@ -121,6 +121,24 @@ export function App() {
       return (
         <div className="flex items-center justify-center min-h-[60vh]">
           <Loader2 className="w-8 h-8 animate-spin text-[#bb0013]" />
+        </div>
+      );
+    }
+    // A failed profile read/create used to leave the app on the spinner above
+    // forever. Say what went wrong instead.
+    if (authError) {
+      return (
+        <div className="flex items-center justify-center min-h-[60vh] px-4">
+          <div className="comic-border-thick bg-[#f4ead5] p-6 max-w-md text-center">
+            <p className="font-bold text-[#bb0013] mb-2">PROFILE UNAVAILABLE</p>
+            <p className="text-sm mb-4">{authError}</p>
+            <button
+              onClick={() => refreshProfile()}
+              className="comic-border-thick bg-[#bb0013] text-white px-4 py-2 font-bold"
+            >
+              RETRY
+            </button>
+          </div>
         </div>
       );
     }
