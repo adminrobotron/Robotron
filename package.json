@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
+    "test:rules": "node scripts/test-rules.mjs",
     "deploy:rules": "firebase deploy --only firestore:rules --project atlantix2k26"
   },
   "dependencies": {
