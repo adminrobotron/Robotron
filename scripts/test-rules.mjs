@@ -106,7 +106,13 @@ async function accessToken() {
 // fixture builders - these mirror src/services/team.ts and registration.ts
 // --------------------------------------------------------------------------
 
-const kv = (o) => Object.entries(o).map(([k, v]) => `'${k}':'${v}'`).join(',');
+// Values are emitted as rules string literals. Wrap a value in raw() to emit a
+// rules expression verbatim instead (timestamps, ints, booleans, null).
+const raw = (expr) => ({ __raw: expr });
+const kv = (o) =>
+  Object.entries(o)
+    .map(([k, v]) => `'${k}':${v !== null && typeof v === 'object' && '__raw' in v ? v.__raw : `'${v}'`}`)
+    .join(',');
 
 const member = (o = {}) =>
   `{${kv({
@@ -121,7 +127,7 @@ const member = (o = {}) =>
     dob: o.dob ?? 'd',
     diet: o.diet ?? 'veg',
     role: o.role ?? 'leader',
-    joinedAt: o.joinedAt ?? 'x',
+    joinedAt: o.joinedAt !== undefined ? o.joinedAt : 'x',
   })}${o.extra ? `,${o.extra}` : ''}}`;
 
 const regMember = (o = {}) =>
@@ -164,6 +170,14 @@ const CASES = [
   ['smuggled extra field on a member', `validMembersList([${member({ extra: "'isAdmin':true" })}])`, false],
   ['five members, over the cap', `validMembersList(${roster(5)})`, false],
   ['empty member list', `validMembersList([])`, false],
+  // Regression: createTeam/joinTeamByCode used to write serverTimestamp() into
+  // members[].joinedAt. Firestore cannot hold a sentinel inside an array, so the
+  // backend resolved it to a real timestamp, which failed `joinedAt is string`
+  // and denied the whole team write with "Missing or insufficient permissions".
+  // timestamp.date() is the only way to build a real timestamp in rules; note
+  // request.time does not exist, so use this rather than assuming otherwise.
+  ['joinedAt written as a timestamp (old serverTimestamp-in-array bug)', `validMembersList([${member({ joinedAt: raw('timestamp.date(2026, 1, 1)') })}])`, false],
+  ['joinedAt written as an ISO string (current code)', `validMembersList([${member()}])`, true],
   ['validTeam with a bad member', `validTeam(${team(`[${member({ role: 'HACKER' })}]`)})`, false],
   ['validTeam with an off-enum status', `validTeam(${team(roster(1), { status: 'hacked' })})`, false],
   ['validTeam with maxMembers above the cap', `validTeam(${team(roster(1), { maxMembers: 9 })})`, false],
