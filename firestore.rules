@@ -67,7 +67,23 @@ service cloud.firestore {
       return members is list
         && members.size() >= 1
         && members.size() <= 4
-        && members.where(m, validMember(m)).size() == members.size();
+        && validMemberAt(members, 0)
+        && validMemberAt(members, 1)
+        && validMemberAt(members, 2)
+        && validMemberAt(members, 3);
+    }
+
+    // The rules language has no iteration, and rules.List has no where()/map(),
+    // so "every element satisfies P" is written out one index at a time. Index
+    // i is skipped when the list is shorter than i+1: || short-circuits, so
+    // l[i] is never evaluated out of bounds. Bounded by maxMembers <= 4.
+    function validMemberAt(l, i) {
+      return l.size() <= i || validMember(l[i]);
+    }
+
+    // Every element of `a` survives, unchanged and in order, at the front of `b`.
+    function samePrefix(a, b, i) {
+      return a.size() <= i || a[i] == b[i];
     }
 
     function validLeader(l) {
@@ -238,7 +254,9 @@ service cloud.firestore {
         && newMembers[n - 1].uid == myUid()
         && newMembers[n - 1].role == 'member'
         // every pre-existing member survives byte-for-byte
-        && newMembers.slice(0, oldMembers.size()) == oldMembers
+        && samePrefix(oldMembers, newMembers, 0)
+        && samePrefix(oldMembers, newMembers, 1)
+        && samePrefix(oldMembers, newMembers, 2)
         // everything else on the doc is immutable via this path
         && newTeam.diff(oldTeam).affectedKeys().hasOnly(['members', 'updatedAt']);
     }
@@ -263,15 +281,14 @@ service cloud.firestore {
         // nobody may self-mark as already checked in at creation time
         && request.resource.data.get('checkedIn', false) == false
         && request.resource.data.get('amount', 0) is number
-        && request.resource.data.get('members', null) is list
-        && request.resource.data.members.size() >= 1
-        && request.resource.data.members.size() <= 4
-        && request.resource.data.members.where(m, validRegMember(m)).size()
-             == request.resource.data.members.size()
+        && validRegMembers(request.resource.data.get('members', null))
         // at least one member must be me, and I must not be checked in yet
-        && request.resource.data.members.where(m,
-             m.get('email', '') == request.auth.token.get('email', '')
-             && m.get('checkedIn', false) == false).size() > 0;
+        && (
+          uncheckedMemberIsMe(request.resource.data.members, 0)
+          || uncheckedMemberIsMe(request.resource.data.members, 1)
+          || uncheckedMemberIsMe(request.resource.data.members, 2)
+          || uncheckedMemberIsMe(request.resource.data.members, 3)
+        );
 
       // Check-in (scanner.html) flips members[].checkedIn and the top-level
       // flag. Non-admins may only do this on their own registration, and may
@@ -285,22 +302,32 @@ service cloud.firestore {
           && request.resource.data.get('members', []).size()
                == resource.data.get('members', []).size()
           // same member rows, same order, same identities - only checkedIn moves
-          && request.resource.data.members
-               .map(m, {
-                 'memberId': m.get('memberId', ''),
-                 'email': m.get('email', ''),
-                 'name': m.get('name', '')
-               })
-             == resource.data.members
-               .map(m, {
-                 'memberId': m.get('memberId', ''),
-                 'email': m.get('email', ''),
-                 'name': m.get('name', '')
-               })
+          && sameIdentity(request.resource.data.members, resource.data.members, 0)
+          && sameIdentity(request.resource.data.members, resource.data.members, 1)
+          && sameIdentity(request.resource.data.members, resource.data.members, 2)
+          && sameIdentity(request.resource.data.members, resource.data.members, 3)
           && validRegMembers(request.resource.data.get('members', []))
         );
 
       allow delete: if isAdmin();
+    }
+
+    // The identity columns of a registration member, i.e. everything except
+    // checkedIn. rules.List has no map(), so the projection is done per index.
+    function memberIdentity(m) {
+      return [m.get('memberId', ''), m.get('email', ''), m.get('name', '')];
+    }
+
+    function sameIdentity(a, b, i) {
+      return b.size() <= i || memberIdentity(a[i]) == memberIdentity(b[i]);
+    }
+
+    // True when a registration member at index i is the caller and is not yet
+    // checked in. Indices past the end of the list do not match.
+    function uncheckedMemberIsMe(l, i) {
+      return l.size() > i
+        && l[i].get('email', '') == request.auth.token.get('email', '')
+        && l[i].get('checkedIn', false) == false;
     }
 
     // A registration member row as written by src/services/registration.ts.
@@ -329,7 +356,14 @@ service cloud.firestore {
       return members is list
         && members.size() >= 1
         && members.size() <= 4
-        && members.where(m, validRegMember(m)).size() == members.size();
+        && validRegMemberAt(members, 0)
+        && validRegMemberAt(members, 1)
+        && validRegMemberAt(members, 2)
+        && validRegMemberAt(members, 3);
+    }
+
+    function validRegMemberAt(l, i) {
+      return l.size() <= i || validRegMember(l[i]);
     }
 
     // The caller is listed as a member of this registration.
@@ -337,9 +371,17 @@ service cloud.firestore {
     function isRegistrationOwner() {
       return isSignedIn()
         && resource.data.get('members', null) is list
-        && resource.data.get('members', [])
-          .where(m, m.get('email', '') == request.auth.token.get('email', ''))
-          .size() > 0;
+        && (
+          memberEmailIs(resource.data.members, 0)
+          || memberEmailIs(resource.data.members, 1)
+          || memberEmailIs(resource.data.members, 2)
+          || memberEmailIs(resource.data.members, 3)
+        );
+    }
+
+    function memberEmailIs(l, i) {
+      return l.size() > i
+        && l[i].get('email', '') == request.auth.token.get('email', '');
     }
 
     // ---- default deny --------------------------------------------------
