@@ -14,3 +14,5 @@ config.js
 firebase-debug.log
 firestore-debug.log
 .firebase/
+
+.vercel

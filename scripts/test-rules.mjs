@@ -143,8 +143,25 @@ const regMember = (o = {}) =>
     memberId: o.memberId ?? 'm1',
   })},'checkedIn':${o.checkedIn ?? false}${o.extra ? `,${o.extra}` : ''}}`;
 
+// Members[0] is always the leader and keeps role 'leader', so rosters read
+// naturally; extra slots default to role 'member'.
 const roster = (n) =>
-  `[${Array.from({ length: n }, (_, i) => member({ uid: String.fromCharCode(97 + i) })).join(',')}]`;
+  `[${Array.from({ length: n }, (_, i) =>
+    member({ uid: String.fromCharCode(97 + i), role: i === 0 ? 'leader' : 'member' }),
+  ).join(',')}]`;
+
+/**
+ * A valid join: the n existing members followed by one appended entry.
+ * `over` tampers with the appended entry, `overFirst` with the member before
+ * it, so a rewrite of the existing roster can be modelled too.
+ */
+const append = (n, over = {}, overFirst = {}) => {
+  const existing =
+    n === 1 ? [member({ uid: 'a', role: 'leader', ...overFirst })] : Array.from({ length: n }, (_, i) =>
+      member({ uid: String.fromCharCode(97 + i), role: i === 0 ? 'leader' : 'member', ...(i === 0 ? overFirst : {}) }),
+    );
+  return `[${existing.join(',')},${member({ uid: 'A', role: 'member', ...over })}]`;
+};
 
 const team = (membersList, o = {}) =>
   `{'teamCode':'AB-2345','teamName':'T','leader':{'uid':'a','displayName':'A','email':'a@b.com'},` +
@@ -193,6 +210,51 @@ const CASES = [
   ['samePrefix, full three-member prefix', `samePrefix(${roster(3)}, ${roster(4)}, 2)`, true],
   ['samePrefix, leader phone rewritten', `samePrefix([${member()}], [${member({ phone: '999' })},${member({ uid: 'b' })}], 0)`, false],
   ['samePrefix, existing member swapped out', `samePrefix([${member()},${member({ uid: 'b' })}], [${member()},${member({ uid: 'z' })}], 1)`, false],
+
+  // ---- isJoiningTeam: the only non-leader path to append to members[] ----
+  // The probe caller is uid 'A', which isJoiningTeam requires to be the LAST
+  // entry, so these rosters end with uid 'A' as role 'member'.
+  // Without these cases the browser join flow fails with an opaque 403 while
+  // the harness still reports the whole flow as healthy.
+  [
+    'isJoiningTeam, valid single append',
+    `isJoiningTeam(${team(roster(1))}, ${team(append(1))})`,
+    true,
+  ],
+  [
+    'isJoiningTeam, valid append to a three-member team',
+    `isJoiningTeam(${team(roster(3))}, ${team(append(3))})`,
+    true,
+  ],
+  ['isJoiningTeam, roster shrinks (eviction)', `isJoiningTeam(${team(roster(2))}, ${team(roster(1))})`, false],
+  ['isJoiningTeam, roster unchanged', `isJoiningTeam(${team(roster(1))}, ${team(roster(1))})`, false],
+  ['isJoiningTeam, appends two members at once', `isJoiningTeam(${team(roster(1))}, ${team(append(1, { uid: 'B' }))})`, false],
+  ['isJoiningTeam, fifth member exceeds the cap', `isJoiningTeam(${team(roster(4))}, ${team(roster(5))})`, false],
+  [
+    'isJoiningTeam, maxMembers raised to squeeze in a fifth',
+    `isJoiningTeam(${team(roster(4), { maxMembers: 4 })}, ${team(roster(5), { maxMembers: 5 })})`,
+    false,
+  ],
+  [
+    'isJoiningTeam, appended entry is somebody else',
+    `isJoiningTeam(${team(roster(1))}, ${team(append(1, { uid: 'Z' }))})`,
+    false,
+  ],
+  [
+    'isJoiningTeam, rewrites an existing member phone',
+    `isJoiningTeam(${team(roster(1))}, ${team(append(1, {}, { phone: '9' }))})`,
+    false,
+  ],
+  [
+    'isJoiningTeam, appended member tagged as leader',
+    `isJoiningTeam(${team(roster(1))}, ${team(append(1, { role: 'leader' }))})`,
+    false,
+  ],
+  [
+    'isJoiningTeam, joinedAt written as a timestamp',
+    `isJoiningTeam(${team(roster(1))}, ${team(append(1, { joinedAt: raw('timestamp.date(2026, 1, 1)') }))})`,
+    false,
+  ],
 
   // ---- memberEmailIs / uncheckedMemberIsMe: isRegistrationOwner + create ----
   ['memberEmailIs, caller in slot 1', `memberEmailIs([${member()}], 0)`, true],
