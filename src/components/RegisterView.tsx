@@ -125,7 +125,7 @@ export const RegisterView: React.FC<RegisterViewProps> = ({
         </h1>
 
         <p className="font-bricolage text-lg sm:text-xl font-bold text-[#1a1a1a] max-w-3xl mx-auto">
-          Enter the arena for Robotron 2027. Code. Create. Compete. Join the most exciting 24-hour hackathon in South India.
+          Enter the arena for Robotron Symposium 2027. Code. Create. Compete. Join the most exciting 24-hour hackathon in South India.
         </p>
       </section>
 

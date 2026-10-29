@@ -51,7 +51,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({ registration, regId, o
             ASSEMBLY CONFIRMED!
           </h2>
           <p className="font-bricolage text-sm font-bold text-zinc-700">
-            YOUR OFFICIAL ROBOTRON 2027 HACKATHON PASS HAS BEEN GENERATED.
+            YOUR OFFICIAL ROBOTRON SYMPOSIUM 2027 PASS HAS BEEN GENERATED.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({ registration, regId, o
           
           {/* Top Pass Header */}
           <div className="flex justify-between items-center bg-[#bb0013] text-white p-3 comic-border-thick -mx-6 -mt-6">
-            <span className="font-anton text-xl tracking-wider">ROBOTRON 2027 PASS</span>
+            <span className="font-anton text-xl tracking-wider">ROBOTRON SYMPOSIUM 2027 PASS</span>
             <span className="bg-[#fddc00] text-[#1a1a1a] font-anton text-xs px-2.5 py-0.5 comic-border-thick">
               {regId}
             </span>

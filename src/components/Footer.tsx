@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, editable }) => {
 
         {/* Bottom Tagline */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs font-bricolage text-zinc-400">
-          <p>{editable ? <E value={footer?.copyright || ''} path="footer.copyright" as="span" /> : footer?.copyright || '© 2027 ROBOTRON HACKATHON. ASSEMBLE YOUR TEAM.'}</p>
+          <p>{editable ? <E value={footer?.copyright || ''} path="footer.copyright" as="span" /> : footer?.copyright || '© 2027 ROBOTRON SYMPOSIUM. ASSEMBLE YOUR TEAM.'}</p>
           <div className="flex items-center gap-4">
             <p className="text-zinc-500">{editable ? <E value={footer?.tagline || ''} path="footer.tagline" as="span" /> : footer?.tagline || '24 HOURS. INFINITE POSSIBILITIES.'}</p>
             {!editable && (

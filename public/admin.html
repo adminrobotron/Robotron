@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotron 2027 - Admin Dashboard</title>
+    <title>Robotron Symposium 2027 - Admin Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #f4ead5; --red: #bb0013; --yellow: #fddc00; --dark: #1a1a1a; --success: #00c853; --card: #ffffff; }
@@ -299,6 +299,15 @@
             siteContent.schedule.day1 = defaults.schedule.day1;
             siteContent.schedule.day2 = defaults.schedule.day2;
         }
+        // Migrate legacy "Robotron Hackathon 2027" naming saved in Firestore.
+        if (/^robotron hackathon 2027$/i.test(String(siteContent.hero?.title || "").trim())) {
+            siteContent.hero = siteContent.hero || {};
+            siteContent.hero.title = defaults.hero.title;
+        }
+        if (/robotron hackathon/i.test(String(siteContent.footer?.copyright || ""))) {
+            siteContent.footer = siteContent.footer || {};
+            siteContent.footer.copyright = defaults.footer.copyright;
+        }
         populateUI();
     }
 
@@ -487,7 +496,7 @@
 
     function getDefaultContent() {
         return {
-            hero: { badge: "MISSION CRITICAL: JANUARY 15-16, 2026 • COIMBATORE", title: "ROBOTRON 2027", subtitle: "24 HOURS. INFINITE POSSIBILITIES. ASSEMBLE YOUR SQUAD AND EXECUTE THE PLAN.", date: "JANUARY 15-16, 2026", venue: "PARK COLLEGE OF ENGINEERING, COIMBATORE" },
+            hero: { badge: "MISSION CRITICAL: JANUARY 15-16, 2026 • COIMBATORE", title: "ROBOTRON SYMPOSIUM 2027", subtitle: "24 HOURS. INFINITE POSSIBILITIES. ASSEMBLE YOUR SQUAD AND EXECUTE THE PLAN.", date: "JANUARY 15-16, 2026", venue: "PARK COLLEGE OF ENGINEERING, COIMBATORE" },
             about: { heading: "ABOUT ROBOTRON", cards: [
                 { title: "INNOVATION HUB", description: "Join the most exciting hackathon in South India where brilliant minds come together to solve real-world problems through technology and creativity." },
                 { title: "COMPETE & WIN", description: "Compete for amazing prizes worth ₹50,000 while showcasing your technical skills in various categories from AI/ML to cybersecurity." },
@@ -552,7 +561,7 @@
                 ]
             },
             contact: { address: "Park College of Engineering and Technology, Kaniyur, Coimbatore - 641659, Tamil Nadu, India", emails: ["hello@Robotron2027.com", "support@Robotron2027.com"], phones: ["+91 98765 43210", "+91 87654 32109"] },
-            footer: { brand: "ROBOTRON 2027", tagline: "24 HOURS. INFINITE POSSIBILITIES.", copyright: "© 2027 ROBOTRON HACKATHON. ASSEMBLE YOUR TEAM." }
+            footer: { brand: "ROBOTRON 2027", tagline: "24 HOURS. INFINITE POSSIBILITIES.", copyright: "© 2027 ROBOTRON SYMPOSIUM. ASSEMBLE YOUR TEAM." }
         };
     }
 </script>

@@ -10,7 +10,7 @@ const defaultEvents: EventItem[] = ALL_EVENTS;
 const defaultContent: SiteContent = {
   hero: {
     badge: 'MISSION CRITICAL: JANUARY 15-16, 2026 • COIMBATORE',
-    title: 'ROBOTRON 2027',
+    title: 'ROBOTRON SYMPOSIUM 2027',
     subtitle: '24 HOURS. INFINITE POSSIBILITIES. ASSEMBLE YOUR SQUAD AND EXECUTE THE PLAN.',
     date: 'JANUARY 15-16, 2026',
     venue: 'PARK COLLEGE OF ENGINEERING, COIMBATORE',
@@ -71,7 +71,7 @@ const defaultContent: SiteContent = {
   footer: {
     brand: 'ROBOTRON 2027',
     tagline: '24 HOURS. INFINITE POSSIBILITIES.',
-    copyright: '© 2027 ROBOTRON HACKATHON. ASSEMBLE YOUR TEAM.',
+    copyright: '© 2027 ROBOTRON SYMPOSIUM. ASSEMBLE YOUR TEAM.',
   },
 };
 
@@ -91,6 +91,14 @@ function deepMergeWithHealing(target: SiteContent, source: Partial<SiteContent>)
   const savedEvents = [...(result.events?.technical || []), ...(result.events?.civilian || [])];
   if (savedEvents.some(e => RETIRED_EVENT_TITLES.includes((e.title || '').trim().toUpperCase()))) {
     result.events = { technical: target.events.technical, civilian: target.events.civilian };
+  }
+
+  // Migrate legacy "Robotron Hackathon 2027" naming saved in Firestore.
+  if (/^robotron hackathon 2027$/i.test((result.hero?.title || '').trim())) {
+    result.hero = { ...result.hero, title: target.hero.title };
+  }
+  if (/robotron hackathon/i.test(result.footer?.copyright || '')) {
+    result.footer = { ...result.footer, copyright: target.footer.copyright };
   }
 
   // Heal empty schedule arrays
