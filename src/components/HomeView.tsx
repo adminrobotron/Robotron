@@ -42,7 +42,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
             </div>
 
             <p className="font-bricolage text-xl sm:text-2xl font-bold text-[#1a1a1a] max-w-2xl mx-auto leading-snug">
-              {editable ? <E value={hero?.subtitle || ''} path="hero.subtitle" as="span" /> : hero?.subtitle || '24 HOURS. INFINITE POSSIBILITIES. ASSEMBLE YOUR SQUAD AND EXECUTE THE PLAN.'}
+              {editable ? <E value={hero?.subtitle || ''} path="hero.subtitle" as="span" /> : hero?.subtitle || 'A NATIONAL LEVEL SYMPOSIUM. WHERE BRILLIANT MINDS CONVERGE TO INNOVATE, COLLABORATE, AND SHAPE THE FUTURE.'}
             </p>
 
             {/* Event Info Strip */}
