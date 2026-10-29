@@ -32,19 +32,10 @@ export const SCHEDULE_DAY_1: ScheduleItem[] = [
     day: 1,
     time: '11:00',
     period: 'AM',
-    title: 'TECHNICAL WORKSHOP',
-    description: 'Hands-on technical workshop for registered technical event participants.',
-    badges: ['WORKSHOP BAY'],
+    title: 'TECHNICAL WORKSHOP & NON-TECHNICAL EVENTS',
+    description: 'Technical events: hands-on workshop for registered participants. Non-technical events: Chess, Anime Quiz, Free Fire, Just A Minute, Balloon Blast, and Spin Around.',
+    badges: ['WORKSHOP BAY', 'ACTIVITY HALLS'],
     iconName: 'Wrench'
-  },
-  {
-    day: 1,
-    time: '11:00',
-    period: 'AM',
-    title: 'NON-TECHNICAL EVENTS',
-    description: 'Chess, Anime Quiz, Free Fire, Just A Minute, Balloon Blast, and Spin Around.',
-    badges: ['ACTIVITY HALLS'],
-    iconName: 'Users'
   },
   {
     day: 1,
