@@ -4,26 +4,26 @@ export const TECHNICAL_EVENTS: EventItem[] = [
   {
     id: 'tech-01',
     code: 'TECH-01',
-    title: 'PAPER PRESENTATION',
+    title: 'START UP',
     category: 'technical',
-    description: 'Present your innovative research ideas and technical solutions to the council.',
-    fee: 30,
-    feeText: 'bolt FEE: ₹30',
-    iconName: 'FileText',
-    teamSize: '1 - 3 Members',
+    description: 'Pitch a disruptive startup idea to a panel of investors and industry mentors.',
+    fee: 50,
+    feeText: 'bolt FEE: ₹50',
+    iconName: 'Rocket',
+    teamSize: '1 - 4 Members',
     rules: [
-      'Slide deck length must be 8-10 slides max.',
-      '10 minutes presentation + 3 minutes Q&A.',
-      'Topics include AI, Robotics, Embedded Systems, IoT, and Cyber-physical systems.',
-      'Plagiarism above 15% will lead to immediate disqualification.'
+      'Teams get 5 minutes to pitch + 3 minutes Q&A.',
+      'Pitch deck must cover problem, solution, market, and business model.',
+      'A working prototype or live demo earns bonus points.',
+      'Judged on innovation, feasibility, and scalability.'
     ],
-    timing: 'Jan 15, 02:00 PM',
-    venue: 'Seminar Hall A'
+    timing: 'Jan 15, 01:00 PM',
+    venue: 'Innovation Lab'
   },
   {
     id: 'tech-02',
     code: 'TECH-02',
-    title: 'LINE FOLLOWER',
+    title: 'LINE FOLLOWER ROBOT',
     category: 'technical',
     description: 'Build autonomous robots that can navigate predefined paths with precision.',
     fee: 50,
@@ -80,6 +80,25 @@ export const TECHNICAL_EVENTS: EventItem[] = [
   {
     id: 'tech-05',
     code: 'TECH-05',
+    title: 'HACKATHON',
+    category: 'technical',
+    description: "South India's premier 24-hour coding marathon to build real-world solutions.",
+    fee: 100,
+    feeText: 'bolt FEE: ₹100',
+    iconName: 'Code',
+    teamSize: '2 - 4 Members',
+    rules: [
+      'Teams of 2-4 members with a 24-hour build window.',
+      'Problem statements revealed at the opening ceremony.',
+      'All code must be written during the event.',
+      'Final submission includes repo link, demo video, and live pitch.'
+    ],
+    timing: 'Jan 15, 10:00 AM - Jan 16, 10:00 AM',
+    venue: 'Main Hackathon Hall'
+  },
+  {
+    id: 'tech-06',
+    code: 'TECH-06',
     title: 'ROBO SOCCER',
     category: 'technical',
     description: 'Program robots to compete in an exciting and lethal soccer tournament.',
@@ -97,8 +116,8 @@ export const TECHNICAL_EVENTS: EventItem[] = [
     venue: 'Robotics Arena 2'
   },
   {
-    id: 'tech-06',
-    code: 'TECH-06',
+    id: 'tech-07',
+    code: 'TECH-07',
     title: 'TECHNICAL QUIZ',
     category: 'technical',
     description: 'Test your deep-core knowledge in various technical domains.',
@@ -116,8 +135,8 @@ export const TECHNICAL_EVENTS: EventItem[] = [
     venue: 'Main Auditorium'
   },
   {
-    id: 'tech-07',
-    code: 'TECH-07',
+    id: 'tech-08',
+    code: 'TECH-08',
     title: 'CTF (CAPTURE THE FLAG)',
     category: 'technical',
     description: 'Brutal cybersecurity challenges, reverse engineering, and cryptographic puzzles.',
@@ -135,9 +154,9 @@ export const TECHNICAL_EVENTS: EventItem[] = [
     venue: 'Cyber Lab 101'
   },
   {
-    id: 'tech-08',
-    code: 'TECH-08',
-    title: 'PIT STOP',
+    id: 'tech-09',
+    code: 'TECH-09',
+    title: 'PIT STOP CHALLENGE',
     category: 'technical',
     description: 'Fast-paced engineering challenges and soldering/circuit fixes under heavy time pressure.',
     fee: 55,
@@ -151,6 +170,25 @@ export const TECHNICAL_EVENTS: EventItem[] = [
     ],
     timing: 'Jan 16, 10:00 AM',
     venue: 'Hardware Workshop Bay'
+  },
+  {
+    id: 'tech-10',
+    code: 'TECH-10',
+    title: 'CIRCUIT DEBUGGING',
+    category: 'technical',
+    description: 'Trace faults and repair defective circuits against the clock.',
+    fee: 40,
+    feeText: 'bolt FEE: ₹40',
+    iconName: 'CircuitBoard',
+    teamSize: '1 - 2 Members',
+    rules: [
+      'Faulty circuits are provided on the spot.',
+      'Identify and fix all injected faults within 30 minutes.',
+      'Only the provided multimeter and soldering kit may be used.',
+      'Fewest errors and fastest valid repair wins.'
+    ],
+    timing: 'Jan 16, 12:00 PM',
+    venue: 'Electronics Lab 105'
   }
 ];
 
@@ -177,43 +215,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
   {
     id: 'civilian-02',
     code: 'NON-02',
-    title: 'ANIME QUIZ',
-    category: 'civilian',
-    description: 'The ultimate test for seasoned anime enthusiasts, manga readers, and Otaku.',
-    fee: 0,
-    feeText: 'VERIFIED FEE: FREE',
-    iconName: 'Sparkles',
-    teamSize: '1 - 2 Members',
-    rules: [
-      'Covers Shonen, Seinen, Classic & Modern Anime Series.',
-      'Name the OST sound clip round included.',
-      'No smartwatches or phone usage allowed during rounds.'
-    ],
-    timing: 'Jan 15, 07:30 PM',
-    venue: 'Open Amphitheatre'
-  },
-  {
-    id: 'civilian-03',
-    code: 'NON-03',
-    title: 'MEME QUIZ',
-    category: 'civilian',
-    description: 'Prove your dominance in the arena of internet culture, viral trends, and lore.',
-    fee: 0,
-    feeText: 'VERIFIED FEE: FREE',
-    iconName: 'Smile',
-    teamSize: '2 Members',
-    rules: [
-      'Identify the meme template and origin.',
-      'Recreate iconic viral meme formats on the spot.',
-      'Judged on humor, speed, and accuracy.'
-    ],
-    timing: 'Jan 15, 09:00 PM',
-    venue: 'Open Amphitheatre'
-  },
-  {
-    id: 'civilian-04',
-    code: 'NON-04',
-    title: 'JUST A MIN (JAM)',
+    title: 'JUST A MINUTE',
     category: 'civilian',
     description: 'Rapid-fire wit, spontaneous impromptu speaking, and lightning-fast speech challenges.',
     fee: 0,
@@ -229,8 +231,8 @@ export const CIVILIAN_EVENTS: EventItem[] = [
     venue: 'Conference Room C'
   },
   {
-    id: 'civilian-05',
-    code: 'NON-05',
+    id: 'civilian-03',
+    code: 'NON-03',
     title: '7TH SENSE',
     category: 'civilian',
     description: 'Intuition, spatial perception, and logic-based mind puzzles that defy reality.',
@@ -247,8 +249,8 @@ export const CIVILIAN_EVENTS: EventItem[] = [
     venue: 'Activity Room 102'
   },
   {
-    id: 'civilian-06',
-    code: 'NON-06',
+    id: 'civilian-04',
+    code: 'NON-04',
     title: 'PAPER PYRAMID',
     category: 'civilian',
     description: 'Creative structural engineering challenge using minimal paper sheets and tape.',
@@ -265,26 +267,26 @@ export const CIVILIAN_EVENTS: EventItem[] = [
     venue: 'Design Studio B'
   },
   {
-    id: 'civilian-07',
-    code: 'NON-07',
-    title: 'SILENT MUSIC',
+    id: 'civilian-05',
+    code: 'NON-05',
+    title: 'ANIME QUIZ',
     category: 'civilian',
-    description: 'Rhythm-based fun where silence is golden and headphone beats rule the floor.',
+    description: 'The ultimate test for seasoned anime enthusiasts, manga readers, and Otaku.',
     fee: 0,
     feeText: 'VERIFIED FEE: FREE',
-    iconName: 'Headphones',
-    teamSize: '2 Members',
+    iconName: 'Sparkles',
+    teamSize: '1 - 2 Members',
     rules: [
-      'One team member listens to loud headphones and lip-reads the song name.',
-      'No hand gesture spelling allowed.',
-      'Most correct song guesses in 2 minutes wins.'
+      'Covers Shonen, Seinen, Classic & Modern Anime Series.',
+      'Name the OST sound clip round included.',
+      'No smartwatches or phone usage allowed during rounds.'
     ],
-    timing: 'Jan 16, 01:30 PM',
-    venue: 'Student Activity Hub'
+    timing: 'Jan 15, 07:30 PM',
+    venue: 'Open Amphitheatre'
   },
   {
-    id: 'civilian-08',
-    code: 'NON-08',
+    id: 'civilian-06',
+    code: 'NON-06',
     title: 'FIVE LEGS',
     category: 'civilian',
     description: 'Extreme physical team coordination, balancing, and problem-solving trials.',
@@ -299,6 +301,82 @@ export const CIVILIAN_EVENTS: EventItem[] = [
     ],
     timing: 'Jan 16, 02:30 PM',
     venue: 'Campus Lawn Area'
+  },
+  {
+    id: 'civilian-07',
+    code: 'NON-07',
+    title: 'PHOTOGRAPHY',
+    category: 'civilian',
+    description: 'Capture the most striking frames across the campus on a given theme.',
+    fee: 0,
+    feeText: 'VERIFIED FEE: FREE',
+    iconName: 'Camera',
+    teamSize: 'Individual',
+    rules: [
+      'Theme revealed at the start of the event.',
+      'Photos must be shot during the event window only.',
+      'Basic color correction allowed; heavy manipulation is not.',
+      'Judged on composition, creativity, and storytelling.'
+    ],
+    timing: 'Jan 16, 10:30 AM',
+    venue: 'Campus Grounds'
+  },
+  {
+    id: 'civilian-08',
+    code: 'NON-08',
+    title: 'SPIN AROUND',
+    category: 'civilian',
+    description: 'A dizzying challenge combining balance, speed, and nerve.',
+    fee: 0,
+    feeText: 'VERIFIED FEE: FREE',
+    iconName: 'RefreshCw',
+    teamSize: 'Individual',
+    rules: [
+      'Participants spin for a fixed duration before each task.',
+      'Complete the obstacle course without losing balance.',
+      'Falling or stepping out incurs a time penalty.',
+      'Fastest clean run wins.'
+    ],
+    timing: 'Jan 16, 01:00 PM',
+    venue: 'Open Amphitheatre'
+  },
+  {
+    id: 'civilian-09',
+    code: 'NON-09',
+    title: 'BALLOON BLAST',
+    category: 'civilian',
+    description: 'Pop your way through a chaotic balloon battlefield.',
+    fee: 0,
+    feeText: 'VERIFIED FEE: FREE',
+    iconName: 'PartyPopper',
+    teamSize: '2 Members',
+    rules: [
+      'Balloons are tied to the ankle of each participant.',
+      "Protect your balloon while popping opponents'.",
+      'Last participant with an intact balloon wins.',
+      'No physical contact above the knee.'
+    ],
+    timing: 'Jan 16, 02:00 PM',
+    venue: 'Student Activity Hub'
+  },
+  {
+    id: 'civilian-10',
+    code: 'NON-10',
+    title: 'CHESS',
+    category: 'civilian',
+    description: 'Classic strategy showdown on the 64-square battlefield.',
+    fee: 0,
+    feeText: 'VERIFIED FEE: FREE',
+    iconName: 'Crown',
+    teamSize: 'Individual',
+    rules: [
+      'Swiss format with a 10+5 rapid time control.',
+      'Touch-move rule strictly enforced.',
+      'Draws resolved by tiebreak points.',
+      'Phones and engines prohibited.'
+    ],
+    timing: 'Jan 16, 03:00 PM',
+    venue: 'Conference Room C'
   }
 ];
 
