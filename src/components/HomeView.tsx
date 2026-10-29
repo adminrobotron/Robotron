@@ -36,7 +36,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
                 {editable ? (
                   <E value={hero?.title || ''} path="hero.title" as="span" />
                 ) : (
-                  <>{hero?.title?.split(' ').slice(0, -1).join(' ') || 'ROBOTRON'}{' '}<span className="text-[#bb0013]">{hero?.title?.split(' ').slice(-1) || '2027'}</span></>
+                  <>{hero?.title?.split(' ').slice(0, -1).join(' ') || 'ROBOTRON'}{' '}<span className="text-[#fddc00]">{hero?.title?.split(' ').slice(-1) || '2027'}</span></>
                 )}
               </h1>
             </div>
