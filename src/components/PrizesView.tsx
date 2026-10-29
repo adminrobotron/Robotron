@@ -30,7 +30,7 @@ export const PrizesView: React.FC<PrizesViewProps> = ({ setActiveTab, editable }
         </h1>
 
         <p className="font-bricolage text-lg sm:text-xl font-bold text-[#1a1a1a] max-w-3xl mx-auto">
-          Battle across 24 intense hours to claim your share of the ultimate reward. Beyond cash, win mentorship, incubation, and industry recognition.
+          Compete on a national stage to claim your share of the ultimate reward. Beyond cash, win mentorship, incubation, and industry recognition.
         </p>
       </section>
 
