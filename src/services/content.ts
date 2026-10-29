@@ -40,10 +40,13 @@ const defaultContent: SiteContent = {
       { time: '03:30 PM', title: 'START UP & CTF', description: 'Technical events: Start Up pitch and Capture The Flag cybersecurity challenge.' },
     ],
     day2: [
-      { time: '08:00 AM', title: 'BREAKFAST & REFRESHMENTS', description: 'Recharge with hot South Indian breakfast and freshly brewed coffee.' },
-      { time: '12:00 PM', title: 'SUBMISSION DEADLINE', description: 'Final code freeze, repository commit lock, and project submission.', isHighlight: true },
-      { time: '02:00 PM', title: 'PROJECT PRESENTATIONS', description: 'Showcase your functional prototypes and live demos to the judging council.' },
-      { time: '05:00 PM', title: 'AWARDS CEREMONY', description: 'Announcing winners, trophy distribution, cash prizes, and closing valedictory.' },
+      { time: '09:00 AM', title: 'PIT STOP CHALLENGE & NON-TECHNICAL EVENTS', description: 'Technical events: Pit Stop Challenge. Non-technical events: all non-technical events.' },
+      { time: '10:00 AM', title: 'TEA BREAK', description: 'Recharge with tea and snacks before the next round of events.' },
+      { time: '10:30 AM', title: 'DRAG RACE', description: 'Technical events: Drag Race on the outdoor strip.' },
+      { time: '11:30 AM', title: 'PROJECT EXPO & TECHNICAL QUIZ', description: 'Technical events: Project Expo showcase and Technical Quiz.' },
+      { time: '01:00 PM', title: 'LUNCH BREAK', description: 'Break for lunch and regroup before the final sessions.' },
+      { time: '02:00 PM', title: 'ROBO SOCCER & PROJECT EXPO', description: 'Technical events: Robo Soccer and the Project Expo finals.' },
+      { time: '03:30 PM', title: 'PRIZE DISTRIBUTION', description: 'Winners announced, trophies and cash prizes awarded, closing ceremony.', isHighlight: true },
     ],
   },
   events: {

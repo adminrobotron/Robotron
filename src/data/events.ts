@@ -74,7 +74,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Single drag strip length: 30 meters straight.',
       'Best time of 2 attempts qualifies for final knockout.'
     ],
-    timing: 'Jan 16, 11:00 AM',
+    timing: 'Jan 16, 10:30 AM',
     venue: 'Outdoor Track Bay'
   },
   {
@@ -112,7 +112,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'No physical destruction of opponent robots permitted.',
       'Standard tennis ball used as football.'
     ],
-    timing: 'Jan 16, 01:00 PM',
+    timing: 'Jan 16, 02:00 PM',
     venue: 'Robotics Arena 2'
   },
   {
@@ -131,7 +131,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Round 3: High-stakes Buzzer Round.',
       'No gadgets or internet access permitted.'
     ],
-    timing: 'Jan 15, 05:00 PM',
+    timing: 'Jan 16, 11:30 AM',
     venue: 'Main Auditorium'
   },
   {
@@ -168,7 +168,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Debug intentional wiring errors within 20 minutes.',
       'Judged on speed, clean soldering joints, and output accuracy.'
     ],
-    timing: 'Jan 16, 10:00 AM',
+    timing: 'Jan 16, 09:00 AM',
     venue: 'Hardware Workshop Bay'
   },
   {
@@ -245,7 +245,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Acoustic signal pattern recognition.',
       'Decipher visual illusion matrixes.'
     ],
-    timing: 'Jan 16, 11:30 AM',
+    timing: 'Jan 16, 09:00 AM',
     venue: 'Activity Room 102'
   },
   {
@@ -263,7 +263,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Structure must support a standard weight load.',
       'Tallest stable pyramid within 30 minutes wins.'
     ],
-    timing: 'Jan 16, 12:30 PM',
+    timing: 'Jan 16, 09:00 AM',
     venue: 'Design Studio B'
   },
   {
@@ -299,7 +299,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Failure to maintain rule during race incurs time penalty.',
       'Laughter guaranteed!'
     ],
-    timing: 'Jan 16, 02:30 PM',
+    timing: 'Jan 16, 09:00 AM',
     venue: 'Campus Lawn Area'
   },
   {
@@ -318,7 +318,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Basic color correction allowed; heavy manipulation is not.',
       'Judged on composition, creativity, and storytelling.'
     ],
-    timing: 'Jan 16, 10:30 AM',
+    timing: 'Jan 16, 09:00 AM',
     venue: 'Campus Grounds'
   },
   {

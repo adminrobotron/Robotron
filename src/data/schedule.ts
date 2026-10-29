@@ -78,39 +78,66 @@ export const SCHEDULE_DAY_1: ScheduleItem[] = [
 export const SCHEDULE_DAY_2: ScheduleItem[] = [
   {
     day: 2,
-    time: '08:00',
+    time: '09:00',
     period: 'AM',
-    title: 'BREAKFAST & REFRESHMENTS',
-    description: 'Recharge with hot South Indian breakfast and freshly brewed coffee.',
+    title: 'PIT STOP CHALLENGE & NON-TECHNICAL EVENTS',
+    description: 'Technical events: Pit Stop Challenge. Non-technical events: all non-technical events.',
+    badges: ['HARDWARE BAY', 'ACTIVITY HALLS'],
+    iconName: 'Wrench'
+  },
+  {
+    day: 2,
+    time: '10:00',
+    period: 'AM',
+    title: 'TEA BREAK',
+    description: 'Recharge with tea and snacks before the next round of events.',
     badges: ['DINING HALL'],
     iconName: 'Coffee'
   },
   {
     day: 2,
-    time: '12:00',
+    time: '10:30',
+    period: 'AM',
+    title: 'DRAG RACE',
+    description: 'Technical events: Drag Race on the outdoor strip.',
+    badges: ['OUTDOOR TRACK'],
+    iconName: 'Zap'
+  },
+  {
+    day: 2,
+    time: '11:30',
+    period: 'AM',
+    title: 'PROJECT EXPO & TECHNICAL QUIZ',
+    description: 'Technical events: Project Expo showcase and Technical Quiz.',
+    badges: ['EXPO HALL', 'MAIN AUDITORIUM'],
+    iconName: 'Presentation'
+  },
+  {
+    day: 2,
+    time: '01:00',
     period: 'PM',
-    title: 'SUBMISSION DEADLINE',
-    description: 'Final code freeze, repository commit lock, and project submission.',
-    isHighlight: true,
-    highlightText: 'CODE FREEZE! LOCK ALL REPOSITORIES.',
-    badges: ['CRITICAL DEADLINE'],
-    iconName: 'AlertTriangle'
+    title: 'LUNCH BREAK',
+    description: 'Break for lunch and regroup before the final sessions.',
+    badges: ['DINING HALL'],
+    iconName: 'Coffee'
   },
   {
     day: 2,
     time: '02:00',
     period: 'PM',
-    title: 'PROJECT PRESENTATIONS',
-    description: 'Showcase your functional prototypes and live demos to the judging council.',
-    badges: ['DEMO BAYS 1-5'],
-    iconName: 'Presentation'
+    title: 'ROBO SOCCER & PROJECT EXPO',
+    description: 'Technical events: Robo Soccer and the Project Expo finals.',
+    badges: ['ROBOTICS ARENA', 'EXPO HALL'],
+    iconName: 'Trophy'
   },
   {
     day: 2,
-    time: '05:00',
+    time: '03:30',
     period: 'PM',
-    title: 'AWARDS CEREMONY',
-    description: 'Announcing winners, trophy distribution, cash prizes, and closing valedictory.',
+    title: 'PRIZE DISTRIBUTION',
+    description: 'Winners announced, trophies and cash prizes awarded, closing ceremony.',
+    isHighlight: true,
+    highlightText: 'WINNERS ANNOUNCED!',
     badges: ['MAIN STAGE'],
     iconName: 'Award'
   }
