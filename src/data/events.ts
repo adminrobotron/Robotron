@@ -17,7 +17,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'A working prototype or live demo earns bonus points.',
       'Judged on innovation, feasibility, and scalability.'
     ],
-    timing: 'Jan 15, 01:00 PM',
+    timing: 'Jan 15, 03:30 PM',
     venue: 'Innovation Lab'
   },
   {
@@ -36,7 +36,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Line width is 30mm black line on a white arena.',
       'Fastest accurate completion wins.'
     ],
-    timing: 'Jan 15, 03:30 PM',
+    timing: 'Jan 15, 02:00 PM',
     venue: 'Robotics Arena 1'
   },
   {
@@ -150,7 +150,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Attacking the platform infrastructure results in instant DQ.',
       'Dynamic scoring enabled for top flags.'
     ],
-    timing: 'Jan 15, 08:00 PM - Jan 16 04:00 AM',
+    timing: 'Jan 15, 03:30 PM',
     venue: 'Cyber Lab 101'
   },
   {
@@ -187,7 +187,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Only the provided multimeter and soldering kit may be used.',
       'Fewest errors and fastest valid repair wins.'
     ],
-    timing: 'Jan 16, 12:00 PM',
+    timing: 'Jan 15, 02:00 PM',
     venue: 'Electronics Lab 105'
   }
 ];
@@ -209,7 +209,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Custom room code shared 10 mins prior.',
       'Point system based on placement + kills.'
     ],
-    timing: 'Jan 15, 06:30 PM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Esports Arena Hall B'
   },
   {
@@ -227,7 +227,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Challenged by opponents for grammatical or structural slips.',
       'Topic assigned 30 seconds prior.'
     ],
-    timing: 'Jan 16, 09:30 AM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Conference Room C'
   },
   {
@@ -281,7 +281,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Name the OST sound clip round included.',
       'No smartwatches or phone usage allowed during rounds.'
     ],
-    timing: 'Jan 15, 07:30 PM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Open Amphitheatre'
   },
   {
@@ -337,7 +337,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Falling or stepping out incurs a time penalty.',
       'Fastest clean run wins.'
     ],
-    timing: 'Jan 16, 01:00 PM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Open Amphitheatre'
   },
   {
@@ -356,7 +356,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Last participant with an intact balloon wins.',
       'No physical contact above the knee.'
     ],
-    timing: 'Jan 16, 02:00 PM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Student Activity Hub'
   },
   {
@@ -375,7 +375,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Draws resolved by tiebreak points.',
       'Phones and engines prohibited.'
     ],
-    timing: 'Jan 16, 03:00 PM',
+    timing: 'Jan 15, 11:00 AM',
     venue: 'Conference Room C'
   }
 ];

@@ -30,11 +30,14 @@ const defaultContent: SiteContent = {
   },
   schedule: {
     day1: [
-      { time: '09:00 AM', title: 'REGISTRATION & CHECK-IN', description: 'Get your badges and welcome kit. Verify your team status at the main gate.' },
-      { time: '10:00 AM', title: 'OPENING CEREMONY', description: 'Welcome address, event overview, and unveiling of the main problem statements.' },
-      { time: '12:00 PM', title: 'HACKING BEGINS!', description: 'DEPLOY ALL SYSTEMS. CLOCK IS RUNNING.', isHighlight: true },
-      { time: '03:00 PM', title: 'MENTOR SESSIONS', description: 'Get guidance from industry experts. Slots allocated per team.' },
-      { time: '10:00 PM', title: 'LATE NIGHT CODING', description: 'Midnight fuel, energy drinks, and continuous coding. Stay alert. Keep pushing.' },
+      { time: '08:30 AM', title: 'REGISTRATION & WELCOME', description: 'Technical events check-in. Collect your badges and welcome kit at the main gate.' },
+      { time: '09:30 AM', title: 'INAUGURATION & OPENING CEREMONY', description: 'Welcome address, event overview, and official opening of the ceremony.' },
+      { time: '10:30 AM', title: 'TEA BREAK', description: 'Recharge with tea and snacks before the events begin.' },
+      { time: '11:00 AM', title: 'TECHNICAL WORKSHOP', description: 'Hands-on technical workshop for registered technical event participants.' },
+      { time: '11:00 AM', title: 'NON-TECHNICAL EVENTS', description: 'Chess, Anime Quiz, Free Fire, Just A Minute, Balloon Blast, and Spin Around.' },
+      { time: '01:00 PM', title: 'LUNCH BREAK', description: 'Break for lunch and regroup before the afternoon sessions.' },
+      { time: '02:00 PM', title: 'LINE FOLLOWER ROBOT & CIRCUIT DEBUGGING', description: 'Technical events: Line Follower Robot and Circuit Debugging.' },
+      { time: '03:30 PM', title: 'START UP & CTF', description: 'Technical events: Start Up pitch and Capture The Flag cybersecurity challenge.' },
     ],
     day2: [
       { time: '08:00 AM', title: 'BREAKFAST & REFRESHMENTS', description: 'Recharge with hot South Indian breakfast and freshly brewed coffee.' },

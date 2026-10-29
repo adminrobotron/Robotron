@@ -3,50 +3,75 @@ import { ScheduleItem } from '../types';
 export const SCHEDULE_DAY_1: ScheduleItem[] = [
   {
     day: 1,
-    time: '09:00',
+    time: '08:30',
     period: 'AM',
-    title: 'REGISTRATION & CHECK-IN',
-    description: 'Get your badges and welcome kit. Verify your team status at the main gate.',
+    title: 'REGISTRATION & WELCOME',
+    description: 'Technical events check-in. Collect your badges and welcome kit at the main gate.',
     badges: ['MANDATORY', 'MAIN HALL'],
     iconName: 'QrCode'
   },
   {
     day: 1,
-    time: '10:00',
+    time: '09:30',
     period: 'AM',
-    title: 'OPENING CEREMONY',
-    description: 'Welcome address, event overview, and unveiling of the main problem statements.',
+    title: 'INAUGURATION & OPENING CEREMONY',
+    description: 'Welcome address, event overview, and official opening of the ceremony.',
     badges: ['MAIN AUDITORIUM'],
     iconName: 'Megaphone'
   },
   {
     day: 1,
-    time: '12:00',
-    period: 'PM',
-    title: 'HACKING BEGINS!',
-    description: 'DEPLOY ALL SYSTEMS. CLOCK IS RUNNING.',
-    isHighlight: true,
-    highlightText: 'DEPLOY ALL SYSTEMS. CLOCK IS RUNNING.',
-    badges: ['ALL BAYS', '24 HOUR TIMER ON'],
-    iconName: 'Zap'
+    time: '10:30',
+    period: 'AM',
+    title: 'TEA BREAK',
+    description: 'Recharge with tea and snacks before the events begin.',
+    badges: ['DINING HALL'],
+    iconName: 'Coffee'
   },
   {
     day: 1,
-    time: '03:00',
-    period: 'PM',
-    title: 'MENTOR SESSIONS',
-    description: 'Get guidance from industry experts. Slots allocated per team.',
-    badges: ['MENTOR LOUNGE'],
-    iconName: 'Target'
+    time: '11:00',
+    period: 'AM',
+    title: 'TECHNICAL WORKSHOP',
+    description: 'Hands-on technical workshop for registered technical event participants.',
+    badges: ['WORKSHOP BAY'],
+    iconName: 'Wrench'
   },
   {
     day: 1,
-    time: '10:00',
+    time: '11:00',
+    period: 'AM',
+    title: 'NON-TECHNICAL EVENTS',
+    description: 'Chess, Anime Quiz, Free Fire, Just A Minute, Balloon Blast, and Spin Around.',
+    badges: ['ACTIVITY HALLS'],
+    iconName: 'Users'
+  },
+  {
+    day: 1,
+    time: '01:00',
     period: 'PM',
-    title: 'LATE NIGHT CODING',
-    description: 'Midnight fuel, energy drinks, and continuous coding. Stay alert. Keep pushing.',
-    badges: ['24/7 CAFETERIA OPEN'],
-    iconName: 'Moon'
+    title: 'LUNCH BREAK',
+    description: 'Break for lunch and regroup before the afternoon sessions.',
+    badges: ['DINING HALL'],
+    iconName: 'Coffee'
+  },
+  {
+    day: 1,
+    time: '02:00',
+    period: 'PM',
+    title: 'LINE FOLLOWER ROBOT & CIRCUIT DEBUGGING',
+    description: 'Technical events: Line Follower Robot and Circuit Debugging.',
+    badges: ['ROBOTICS ARENA', 'ELECTRONICS LAB'],
+    iconName: 'Cpu'
+  },
+  {
+    day: 1,
+    time: '03:30',
+    period: 'PM',
+    title: 'START UP & CTF',
+    description: 'Technical events: Start Up pitch and Capture The Flag cybersecurity challenge.',
+    badges: ['INNOVATION LAB', 'CYBER LAB'],
+    iconName: 'Shield'
   }
 ];
 
