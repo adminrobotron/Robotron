@@ -34,7 +34,7 @@ export const EventsView: React.FC<EventsViewProps> = ({ setActiveTab, onSelectEv
       {/* HEADER BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-center space-y-4">
         <div className="inline-block bg-[#bb0013] text-white font-anton text-sm sm:text-base px-4 py-1 comic-border-thick transform -rotate-1">
-          24 HOUR BATTLEFIELD
+          NATIONAL LEVEL BATTLEFIELD
         </div>
 
         <h1 className="font-anton text-5xl sm:text-7xl lg:text-8xl text-[#1a1a1a]">

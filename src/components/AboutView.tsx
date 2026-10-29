@@ -33,7 +33,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, editable }) 
           </h1>
 
           <p className="font-bricolage text-lg sm:text-xl text-zinc-800 font-medium leading-relaxed max-w-3xl mb-8">
-            {editable ? <E value={about?.heading || ''} path="about.heading" as="span" /> : about?.heading || 'ROBOTRON 2027'} is not just a hackathon. It is a 24-hour high-stakes arena where South India's brilliant minds converge to solve real-world problems through raw technology and creativity.
+            {editable ? <E value={about?.heading || ''} path="about.heading" as="span" /> : about?.heading || 'ROBOTRON 2027'} is not just a symposium. It is a national level arena where India's brightest minds converge to solve real-world problems through raw technology and creativity.
           </p>
 
           <div className="bg-[#efe1c5] p-4 comic-border-thick flex flex-col sm:flex-row items-center justify-between gap-4 font-anton text-lg sm:text-xl">
@@ -85,7 +85,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, editable }) 
                 </h3>
               </div>
               <p className="font-bricolage text-sm sm:text-base text-zinc-300 leading-relaxed">
-                {editable ? <E value={about?.cards?.[0]?.description || ''} path="about.cards.0.description" as="span" /> : about?.cards?.[0]?.description || 'Join the most exciting hackathon in South India. Our innovation hub is a pressure cooker for ideas, where cross-disciplinary teams forge the future of AI, ML, and sustainable technology.'}
+                {editable ? <E value={about?.cards?.[0]?.description || ''} path="about.cards.0.description" as="span" /> : about?.cards?.[0]?.description || 'Join the most exciting national level symposium in India. Our innovation hub is a pressure cooker for ideas, where cross-disciplinary teams forge the future of AI, ML, and sustainable technology.'}
               </p>
             </div>
 

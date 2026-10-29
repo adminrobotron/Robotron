@@ -45,7 +45,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({ setActiveTab, editab
         </h1>
 
         <p className="font-bricolage text-lg sm:text-xl font-bold text-[#1a1a1a] max-w-3xl mx-auto">
-          24 HOURS. INFINITE POSSIBILITIES. ASSEMBLE YOUR SQUAD AND EXECUTE THE PLAN.
+          A NATIONAL LEVEL SYMPOSIUM. INNOVATE. COLLABORATE. SHAPE THE FUTURE.
         </p>
 
         <div className="flex justify-center gap-4 pt-4">
@@ -132,7 +132,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({ setActiveTab, editab
               </div>
 
               <p className="font-bricolage text-xs text-zinc-400">
-                24-HOUR CLOCK IS RUNNING IN REAL TIME
+                SYMPOSIUM COUNTDOWN IS RUNNING IN REAL TIME
               </p>
             </div>
 

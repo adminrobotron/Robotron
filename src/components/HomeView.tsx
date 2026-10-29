@@ -275,7 +275,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
             ARE YOU READY TO ENTER THE ARENA?
           </div>
           <p className="font-bricolage text-lg sm:text-xl font-bold text-[#1a1a1a] max-w-2xl mx-auto">
-            Limited slots remaining for teams across Tamil Nadu & South India! Secure your slot today.
+            Limited slots remaining for teams across India! Secure your slot today.
           </p>
           <div className="pt-2">
             <button

@@ -18,7 +18,7 @@ const defaultContent: SiteContent = {
   about: {
     heading: 'ABOUT ROBOTRON',
     cards: [
-      { title: 'INNOVATION HUB', description: 'Join the most exciting hackathon in South India where brilliant minds come together to solve real-world problems through technology and creativity.' },
+      { title: 'INNOVATION HUB', description: 'Join the most exciting national level symposium in India where brilliant minds come together to solve real-world problems through technology and creativity.' },
       { title: 'COMPETE & WIN', description: 'Compete for amazing prizes worth ₹50,000 while showcasing your technical skills in various categories from AI/ML to cybersecurity.' },
       { title: 'NETWORK & LEARN', description: 'Connect with industry experts, developers, mentors. Participate in workshops, tech talks, and gain valuable insights.' },
     ],
@@ -70,7 +70,7 @@ const defaultContent: SiteContent = {
   },
   footer: {
     brand: 'ROBOTRON 2027',
-    tagline: '24 HOURS. INFINITE POSSIBILITIES.',
+    tagline: 'ONE NATION. INFINITE POSSIBILITIES.',
     copyright: '© 2027 ROBOTRON SYMPOSIUM. ASSEMBLE YOUR TEAM.',
   },
 };
@@ -99,6 +99,16 @@ function deepMergeWithHealing(target: SiteContent, source: Partial<SiteContent>)
   }
   if (/robotron hackathon/i.test(result.footer?.copyright || '')) {
     result.footer = { ...result.footer, copyright: target.footer.copyright };
+  }
+  if (result.about?.cards?.length) {
+    result.about = {
+      ...result.about,
+      cards: result.about.cards.map((card, i) =>
+        /hackathon/i.test(card.description || '') && target.about.cards[i]
+          ? { ...card, description: target.about.cards[i].description }
+          : card
+      ),
+    };
   }
 
   // Heal empty schedule arrays
