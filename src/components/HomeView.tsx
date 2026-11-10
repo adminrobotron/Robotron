@@ -83,8 +83,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
               <div className="font-anton text-5xl sm:text-6xl text-[#fddc00]">
                 {editable ? <E value={stats?.hours || ''} path="stats.hours" as="span" /> : stats?.hours || '24'}
               </div>
-              <div className="font-anton text-xl tracking-wider mt-1">HOURS OF CODING</div>
-              <p className="font-bricolage text-xs opacity-90 mt-1">Non-stop building & battle</p>
+              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">OF INNOVATION</div>
+              <p className="font-bricolage text-xs opacity-90 mt-1">Two days of building & battle</p>
             </div>
 
             <div className="bg-[#fddc00] text-[#1a1a1a] p-6 comic-border-thick shadow-comic-md transform rotate-1 text-center">

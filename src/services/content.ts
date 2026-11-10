@@ -24,7 +24,7 @@ const defaultContent: SiteContent = {
     ],
   },
   stats: {
-    hours: '24',
+    hours: '2 DAYS',
     prizePool: '₹50K',
     events: '20',
   },

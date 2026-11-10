@@ -132,7 +132,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, editable }) 
               <div className="font-anton text-6xl text-[#1a1a1a]">
                 {editable ? <E value={stats?.hours || ''} path="stats.hours" as="span" /> : stats?.hours || '24'}
               </div>
-              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">HOURS OF CODING</div>
+              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">OF INNOVATION</div>
             </div>
 
             <div className="bg-white p-6 comic-border-thick shadow-comic transform rotate-1">
