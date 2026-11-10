@@ -220,19 +220,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
       {/* POW! THE MAIN EVENTS TEASER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
-          <div className="flex items-center gap-3">
-            <div className="bg-[#bb0013] text-white font-anton text-2xl sm:text-3xl px-4 py-1.5 comic-border-thick shadow-comic transform -skew-x-6">
-              POW!
-            </div>
-            <h2 className="font-anton text-3xl sm:text-5xl text-[#1a1a1a]">FEATURED TECHNICAL EVENTS</h2>
+        <div className="flex items-center gap-3 mb-8">
+          <div className="bg-[#bb0013] text-white font-anton text-2xl sm:text-3xl px-4 py-1.5 comic-border-thick shadow-comic transform -skew-x-6">
+            POW!
           </div>
-          <button
-            onClick={() => setActiveTab('events')}
-            className="flex items-center gap-2 font-anton text-lg text-[#bb0013] hover:underline"
-          >
-            SEE ALL {(events?.technical?.length || 0) + (events?.civilian?.length || 0)} EVENTS <ArrowRight className="w-5 h-5" />
-          </button>
+          <h2 className="font-anton text-3xl sm:text-5xl text-[#1a1a1a]">FEATURED TECHNICAL EVENTS</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -265,6 +257,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-end mt-8">
+          <button
+            onClick={() => setActiveTab('events')}
+            className="flex items-center gap-2 font-anton text-lg text-[#bb0013] hover:underline"
+          >
+            SEE ALL {(events?.technical?.length || 0) + (events?.civilian?.length || 0)} EVENTS <ArrowRight className="w-5 h-5" />
+          </button>
         </div>
 
       </section>
