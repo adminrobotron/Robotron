@@ -97,6 +97,14 @@ function deepMergeWithHealing(target: SiteContent, source: Partial<SiteContent>)
   if (/^robotron hackathon 2027$/i.test((result.hero?.title || '').trim())) {
     result.hero = { ...result.hero, title: target.hero.title };
   }
+
+  // Force symposium date/badge from code defaults so a stale cached
+  // Firestore doc never shows the old symposium dates.
+  result.hero = {
+    ...result.hero,
+    date: target.hero.date,
+    badge: target.hero.badge,
+  };
   if (/robotron hackathon/i.test(result.footer?.copyright || '')) {
     result.footer = { ...result.footer, copyright: target.footer.copyright };
   }
