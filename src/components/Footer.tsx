@@ -43,12 +43,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, editable }) => {
               >
                 CODE OF CONDUCT
               </button>
-              <button 
-                onClick={() => setActiveTab('register')} 
+              <a
+                href="mailto:sponsor@robotron2027.com?subject=Sponsorship%20Inquiry&body=Hi%20Robotron%20Team%2C%20I%20am%20interested%20in%20sponsoring%20Robotron%20Symposium%202027.%20Please%20share%20sponsorship%20details."
                 className="text-zinc-300 hover:text-[#fddc00] underline underline-offset-4 decoration-2 decoration-[#bb0013]"
               >
                 SPONSOR US
-              </button>
+              </a>
               <button 
                 onClick={() => setActiveTab('schedule')} 
                 className="text-zinc-300 hover:text-[#fddc00] underline underline-offset-4 decoration-2 decoration-[#bb0013]"
