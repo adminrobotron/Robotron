@@ -9,10 +9,10 @@ const defaultEvents: EventItem[] = ALL_EVENTS;
 
 const defaultContent: SiteContent = {
   hero: {
-    badge: 'MISSION CRITICAL: JANUARY 15-16, 2026 • COIMBATORE',
+    badge: 'MISSION CRITICAL: FEBRUARY 4-5, 2027 • COIMBATORE',
     title: 'ROBOTRON SYMPOSIUM 2027',
     subtitle: 'A NATIONAL LEVEL SYMPOSIUM. WHERE BRILLIANT MINDS CONVERGE TO INNOVATE, COLLABORATE, AND SHAPE THE FUTURE.',
-    date: 'JANUARY 15-16, 2026',
+    date: 'FEBRUARY 4-5, 2027',
     venue: 'PARK COLLEGE OF ENGINEERING, COIMBATORE',
   },
   about: {

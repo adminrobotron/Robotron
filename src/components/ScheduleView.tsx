@@ -55,7 +55,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({ setActiveTab, editab
               activeDay === 1 ? 'bg-[#bb0013] text-white scale-105' : 'bg-white text-[#1a1a1a] hover:bg-[#efe1c5]'
             }`}
           >
-            DAY 1 - JAN 15
+            DAY 1 - FEB 4
           </button>
           <button
             onClick={() => setActiveDay(2)}
@@ -63,7 +63,7 @@ export const ScheduleView: React.FC<ScheduleViewProps> = ({ setActiveTab, editab
               activeDay === 2 ? 'bg-[#bb0013] text-white scale-105' : 'bg-white text-[#1a1a1a] hover:bg-[#efe1c5]'
             }`}
           >
-            DAY 2 - JAN 16
+            DAY 2 - FEB 5
           </button>
         </div>
       </section>

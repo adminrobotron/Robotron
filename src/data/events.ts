@@ -20,7 +20,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Final Slide: Conclusion Slide.',
       'Judged on innovation, feasibility, and scalability.'
     ],
-    timing: 'Jan 15, 03:30 PM',
+    timing: 'Feb 4, 03:30 PM',
     venue: 'Innovation Lab'
   },
   {
@@ -39,7 +39,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Maximum Dimensions: 15 cm × 10 cm × 10 cm (Length × Breadth × Height).',
       'Registration Fee: ₹150 per member.'
     ],
-    timing: 'Jan 15, 02:00 PM',
+    timing: 'Feb 4, 02:00 PM',
     venue: 'Robotics Arena 1'
   },
   {
@@ -60,7 +60,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Registration Fee: ₹100 per member.',
       'Judged on precision, stress distribution, and aesthetic functionality.'
     ],
-    timing: 'Jan 15, 04:00 PM',
+    timing: 'Feb 4, 04:00 PM',
     venue: 'CAD Lab 204'
   },
   {
@@ -83,7 +83,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Best time of 2 attempts qualifies for final knockout.',
       'Registration Fee: ₹150 per member.'
     ],
-    timing: 'Jan 16, 10:30 AM',
+    timing: 'Feb 5, 10:30 AM',
     venue: 'Outdoor Track Bay'
   },
   {
@@ -102,7 +102,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'All code must be written during the event.',
       'Final submission includes repo link, demo video, and live pitch.'
     ],
-    timing: 'Jan 15, 10:00 AM - Jan 16, 10:00 AM',
+    timing: 'Feb 4, 10:00 AM - Feb 5, 10:00 AM',
     venue: 'Main Hackathon Hall'
   },
   {
@@ -125,7 +125,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Standard tennis ball used as football.',
       'Registration Fee: ₹150 per member.'
     ],
-    timing: 'Jan 16, 02:00 PM',
+    timing: 'Feb 5, 02:00 PM',
     venue: 'Robotics Arena 2'
   },
   {
@@ -146,7 +146,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Team Size: Solo participation only (1 member).',
       'Registration Fee: ₹50 per member.'
     ],
-    timing: 'Jan 16, 11:30 AM',
+    timing: 'Feb 5, 11:30 AM',
     venue: 'Main Auditorium'
   },
   {
@@ -167,7 +167,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Team Size: Maximum 3 members per team.',
       'Registration Fee: ₹100 per member.'
     ],
-    timing: 'Jan 15, 03:30 PM',
+    timing: 'Feb 4, 03:30 PM',
     venue: 'Cyber Lab 101'
   },
   {
@@ -188,7 +188,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Team Size: Solo participation only (1 member).',
       'Registration Fee: ₹100 per member.'
     ],
-    timing: 'Jan 15, 02:00 PM',
+    timing: 'Feb 4, 02:00 PM',
     venue: 'Electronics Lab 105'
   },
   {
@@ -210,7 +210,7 @@ export const TECHNICAL_EVENTS: EventItem[] = [
       'Team Size: Maximum 3 members per team.',
       'Registration Fee: ₹150 per member.'
     ],
-    timing: 'Jan 16, 02:00 PM',
+    timing: 'Feb 5, 02:00 PM',
     venue: 'Robotics Arena 2'
   }
 ];
@@ -233,7 +233,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Point system based on placement + kills.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Esports Arena Hall B'
   },
   {
@@ -252,7 +252,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Topic assigned 30 seconds prior.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Conference Room C'
   },
   {
@@ -271,7 +271,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Decipher visual illusion matrixes.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 16, 09:00 AM',
+    timing: 'Feb 5, 09:00 AM',
     venue: 'Activity Room 102'
   },
   {
@@ -290,7 +290,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Tallest stable pyramid within 30 minutes wins.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 16, 09:00 AM',
+    timing: 'Feb 5, 09:00 AM',
     venue: 'Design Studio B'
   },
   {
@@ -309,7 +309,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'No smartwatches or phone usage allowed during rounds.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Open Amphitheatre'
   },
   {
@@ -328,7 +328,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Laughter guaranteed!',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 16, 09:00 AM',
+    timing: 'Feb 5, 09:00 AM',
     venue: 'Campus Lawn Area'
   },
   {
@@ -348,7 +348,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Judged on composition, creativity, and storytelling.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 16, 09:00 AM',
+    timing: 'Feb 5, 09:00 AM',
     venue: 'Campus Grounds'
   },
   {
@@ -368,7 +368,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Fastest clean run wins.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Open Amphitheatre'
   },
   {
@@ -388,7 +388,7 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'No physical contact above the knee.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Student Activity Hub'
   },
   {
@@ -408,9 +408,10 @@ export const CIVILIAN_EVENTS: EventItem[] = [
       'Phones and engines prohibited.',
       'Registration Fee: ₹100 per member / per day.'
     ],
-    timing: 'Jan 15, 11:00 AM',
+    timing: 'Feb 4, 11:00 AM',
     venue: 'Conference Room C'
   }
 ];
 
 export const ALL_EVENTS = [...TECHNICAL_EVENTS, ...CIVILIAN_EVENTS];
+

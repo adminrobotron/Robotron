@@ -32,7 +32,7 @@ export async function sendReceiptEmail(payload: EmailPayload): Promise<void> {
     pass_link: payload.passUrl,
     qr_code: payload.qrUrl,
     venue: 'Park College of Engineering and Technology, Kaniyur, Coimbatore',
-    event_date: 'January 15-16, 2026',
+    event_date: 'February 4-5, 2027',
   };
 
   await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);

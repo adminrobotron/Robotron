@@ -58,7 +58,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({
           </div>
           <div className="bg-white p-3 comic-border-thick flex items-center gap-2">
             <Clock className="w-4 h-4 text-[#bb0013]" />
-            <span>{event.timing || 'Jan 15-16, 2026'}</span>
+            <span>{event.timing || 'Feb 4-5, 2027'}</span>
           </div>
           <div className="bg-white p-3 comic-border-thick flex items-center gap-2">
             <MapPin className="w-4 h-4 text-[#bb0013]" />

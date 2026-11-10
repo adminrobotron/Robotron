@@ -196,7 +196,7 @@ export const PrizesView: React.FC<PrizesViewProps> = ({ setActiveTab, editable }
         <div className="bg-[#fddc00] p-8 sm:p-12 comic-border-ultra shadow-comic-xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 text-center md:text-left">
             <span className="bg-[#bb0013] text-white font-anton text-xs px-3 py-1 comic-border-thick">
-              {hero?.date || 'JANUARY 15-16, 2026'} • COIMBATORE
+              {hero?.date || 'FEBRUARY 4-5, 2027'} • COIMBATORE
             </span>
             <h3 className="font-anton text-4xl sm:text-5xl text-[#1a1a1a]">
               READY TO COMPETE?

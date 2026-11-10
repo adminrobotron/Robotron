@@ -39,7 +39,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, editable }) 
           <div className="bg-[#efe1c5] p-4 comic-border-thick flex flex-col sm:flex-row items-center justify-between gap-4 font-anton text-lg sm:text-xl">
             <div className="flex items-center gap-2">
               <Calendar className="w-6 h-6 text-[#bb0013]" />
-              {editable ? <E value={hero?.date || ''} path="hero.date" as="span" /> : hero?.date || 'JANUARY 15-16, 2026'}
+              {editable ? <E value={hero?.date || ''} path="hero.date" as="span" /> : hero?.date || 'FEBRUARY 4-5, 2027'}
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-6 h-6 text-[#bb0013]" />

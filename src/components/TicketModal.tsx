@@ -127,7 +127,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({ registration, regId, o
           </div>
 
           <div className="bg-[#f4ead5] p-2.5 comic-border-thick text-center text-[11px] font-bold text-zinc-700">
-            PRESENT THIS PASS AT PARK COLLEGE ENTRY GATE ON JAN 15, 09:00 AM
+            PRESENT THIS PASS AT PARK COLLEGE ENTRY GATE ON FEB 4, 09:00 AM
           </div>
 
         </div>

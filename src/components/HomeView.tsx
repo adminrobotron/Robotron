@@ -27,7 +27,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
             
             {/* Flash Badge */}
             <div className="inline-block bg-[#fddc00] text-[#1a1a1a] font-anton text-lg sm:text-xl px-5 py-1.5 comic-border-thick shadow-comic -rotate-1">
-              ⚡ {editable ? <E value={hero?.badge || ''} path="hero.badge" as="span" className="inline" /> : hero?.badge || 'MISSION CRITICAL: JANUARY 15-16, 2026 • COIMBATORE'}
+              ⚡ {editable ? <E value={hero?.badge || ''} path="hero.badge" as="span" className="inline" /> : hero?.badge || 'MISSION CRITICAL: FEBRUARY 4-5, 2027 • COIMBATORE'}
             </div>
 
             {/* Giant Title */}
@@ -49,7 +49,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-bold pt-2">
               <div className="flex items-center gap-2 bg-white px-4 py-2 comic-border-thick shadow-comic-sm">
                 <Calendar className="w-5 h-5 text-[#bb0013]" />
-                {editable ? <E value={hero?.date || ''} path="hero.date" as="span" /> : hero?.date || 'JANUARY 15-16, 2026'}
+                {editable ? <E value={hero?.date || ''} path="hero.date" as="span" /> : hero?.date || 'FEBRUARY 4-5, 2027'}
               </div>
               <div className="flex items-center gap-2 bg-white px-4 py-2 comic-border-thick shadow-comic-sm">
                 <MapPin className="w-5 h-5 text-[#bb0013]" />
@@ -157,7 +157,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
           {/* Day 1 Card */}
           <div className="bg-[#efe1c5] p-6 comic-border-thick shadow-comic-md space-y-4">
             <div className="bg-[#1a1a1a] text-white font-anton text-xl px-4 py-2 inline-block comic-border-thick">
-              DAY 1 - JAN 15, 2026
+              DAY 1 - FEB 4, 2027
             </div>
             
             <div className="space-y-3 font-bricolage text-sm">
@@ -182,7 +182,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
           {/* Day 2 Card */}
           <div className="bg-[#efe1c5] p-6 comic-border-thick shadow-comic-md space-y-4">
             <div className="bg-[#bb0013] text-white font-anton text-xl px-4 py-2 inline-block comic-border-thick">
-              DAY 2 - JAN 16, 2026
+              DAY 2 - FEB 5, 2027
             </div>
             
             <div className="space-y-3 font-bricolage text-sm">
