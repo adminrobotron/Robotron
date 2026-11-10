@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavTab, Team, UserProfile } from '../types';
 import { User as FirebaseUser } from 'firebase/auth';
-import { Menu, X, Zap, LogOut, User as UserIcon } from 'lucide-react';
+import { Menu, X, Zap, User as UserIcon } from 'lucide-react';
 import { EditableText } from './EditableText';
 
 interface NavbarProps {
@@ -52,25 +52,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
     if (user) {
       return (
-        <div className="flex items-center gap-3">
-          {team && (
-            <span className="bg-[#fddc00] text-[#1a1a1a] font-anton text-xs px-2.5 py-1 comic-border-thick hidden lg:inline">
-              {team.teamCode}
-            </span>
-          )}
-          <div className="flex items-center gap-2 bg-[#f4ead5] px-3 py-1.5 comic-border-thick">
-            <div className="w-7 h-7 bg-[#bb0013] text-white font-anton text-xs flex items-center justify-center rounded-full">
-              {(user.displayName || user.email || 'U').charAt(0).toUpperCase()}
-            </div>
-            <span className="font-bricolage text-xs font-bold text-[#1a1a1a] hidden sm:inline max-w-[100px] truncate">
-              {user.displayName || user.email?.split('@')[0]}
-            </span>
+        <div
+          onClick={onProfileClick}
+          className="bg-white comic-border-thick shadow-comic-sm flex items-center justify-center cursor-pointer px-3 py-1.5"
+        >
+          <div className="w-7 h-7 bg-[#bb0013] text-white font-anton text-xs flex items-center justify-center rounded-full shrink-0">
+            {(user.displayName || user.email || 'U').charAt(0).toUpperCase()}
           </div>
-          <button onClick={onSignOut}
-            className="flex items-center gap-1 bg-transparent hover:bg-zinc-800 text-white font-anton text-xs px-3 py-1.5 border border-zinc-600 uppercase cursor-pointer transition-colors"
-            title="Sign out">
-            <LogOut className="w-3.5 h-3.5" />
-          </button>
         </div>
       );
     }
