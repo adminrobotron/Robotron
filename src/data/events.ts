@@ -171,24 +171,6 @@ export const TECHNICAL_EVENTS: EventItem[] = [
     venue: 'Cyber Lab 101'
   },
   {
-    id: 'tech-09',
-    code: 'TECH-09',
-    title: 'PIT STOP CHALLENGE',
-    category: 'technical',
-    description: 'Fast-paced engineering challenges and soldering/circuit fixes under heavy time pressure.',
-    fee: 55,
-    feeText: 'bolt FEE: ₹55',
-    iconName: 'Wrench',
-    teamSize: '2 Members',
-    rules: [
-      'Assemble hardware components on PCB from given schematic.',
-      'Debug intentional wiring errors within 20 minutes.',
-      'Judged on speed, clean soldering joints, and output accuracy.'
-    ],
-    timing: 'Jan 16, 09:00 AM',
-    venue: 'Hardware Workshop Bay'
-  },
-  {
     id: 'tech-10',
     code: 'TECH-10',
     title: 'CIRCUIT DEBUGGING',

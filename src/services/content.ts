@@ -26,7 +26,7 @@ const defaultContent: SiteContent = {
   stats: {
     hours: '24',
     prizePool: '₹50K',
-    events: '21',
+    events: '20',
   },
   schedule: {
     day1: [
