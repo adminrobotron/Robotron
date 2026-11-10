@@ -32,13 +32,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, editable }) => {
           {!editable && (
             <div className="flex flex-wrap justify-center gap-6 font-bricolage text-xs sm:text-sm font-bold tracking-wider uppercase">
               <button 
-                onClick={() => setActiveTab('about')} 
+                onClick={() => setActiveTab('privacy')} 
                 className="text-zinc-300 hover:text-[#fddc00] underline underline-offset-4 decoration-2 decoration-[#bb0013]"
               >
                 PRIVACY POLICY
               </button>
               <button 
-                onClick={() => setActiveTab('about')} 
+                onClick={() => setActiveTab('conduct')} 
                 className="text-zinc-300 hover:text-[#fddc00] underline underline-offset-4 decoration-2 decoration-[#bb0013]"
               >
                 CODE OF CONDUCT
@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, editable }) => {
                 SPONSOR US
               </a>
               <button 
-                onClick={() => setActiveTab('schedule')} 
+                onClick={() => setActiveTab('contact')} 
                 className="text-zinc-300 hover:text-[#fddc00] underline underline-offset-4 decoration-2 decoration-[#bb0013]"
               >
                 CONTACT

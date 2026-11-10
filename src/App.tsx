@@ -9,6 +9,9 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
 import { AboutView } from './components/AboutView';
+import { ContactView } from './components/ContactView';
+import { PrivacyView } from './components/PrivacyView';
+import { ConductView } from './components/ConductView';
 import { EventsView } from './components/EventsView';
 import { ScheduleView } from './components/ScheduleView';
 import { PrizesView } from './components/PrizesView';
@@ -246,6 +249,18 @@ export function App() {
 
         {activeTab === 'about' && (
           <AboutView setActiveTab={setActiveTab} />
+        )}
+
+        {activeTab === 'contact' && (
+          <ContactView setActiveTab={setActiveTab} />
+        )}
+
+        {activeTab === 'privacy' && (
+          <PrivacyView setActiveTab={setActiveTab} />
+        )}
+
+        {activeTab === 'conduct' && (
+          <ConductView setActiveTab={setActiveTab} />
         )}
 
         {activeTab === 'events' && (

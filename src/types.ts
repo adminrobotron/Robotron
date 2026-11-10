@@ -1,6 +1,6 @@
 import { Timestamp } from 'firebase/firestore';
 
-export type NavTab = 'home' | 'about' | 'schedule' | 'events' | 'prizes' | 'register' | 'admin';
+export type NavTab = 'home' | 'about' | 'schedule' | 'events' | 'prizes' | 'register' | 'admin' | 'contact' | 'privacy' | 'conduct';
 
 export interface SiteContent {
   hero: {
