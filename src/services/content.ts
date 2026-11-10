@@ -105,6 +105,13 @@ function deepMergeWithHealing(target: SiteContent, source: Partial<SiteContent>)
     date: target.hero.date,
     badge: target.hero.badge,
   };
+
+  // Force stat label from code defaults so a stale cached Firestore doc
+  // never shows the old "24 HOURS OF CODING".
+  result.stats = {
+    ...result.stats,
+    hours: target.stats.hours,
+  };
   if (/robotron hackathon/i.test(result.footer?.copyright || '')) {
     result.footer = { ...result.footer, copyright: target.footer.copyright };
   }
