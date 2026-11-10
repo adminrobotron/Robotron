@@ -128,25 +128,43 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, editable }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             
-            <div className="bg-white p-6 comic-border-thick shadow-comic transform -rotate-2">
-              <div className="font-anton text-6xl text-[#1a1a1a]">
-                {editable ? <E value={stats?.hours || ''} path="stats.hours" as="span" /> : stats?.hours || '24'}
+            {/* 2 DAYS */}
+            <div className="bg-[#bb0013] text-white p-8 sm:p-10 comic-border-thick shadow-comic-xl transform -rotate-2 text-center relative overflow-hidden">
+              <div className="font-anton text-6xl sm:text-8xl text-[#fddc00] font-extrabold tracking-tighter mb-2">
+                {editable ? <E value={stats?.hours || ''} path="stats.hours" as="span" /> : stats?.hours || '2 DAYS'}
               </div>
-              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">OF INNOVATION</div>
+              <div className="font-anton text-2xl sm:text-3xl tracking-wider text-[#fddc00] mt-2 font-extrabold uppercase">
+                OF INNOVATION
+              </div>
+              <p className="font-bricolage text-sm sm:text-base font-semibold mt-3 text-white/90">
+                Two days of building & battle
+              </p>
             </div>
 
-            <div className="bg-white p-6 comic-border-thick shadow-comic transform rotate-1">
-              <div className="font-anton text-6xl text-[#1a1a1a]">
-                {editable ? <E value={stats?.prizePool?.replace('₹', '') || ''} path="stats.prizePool" as="span" /> : stats?.prizePool?.replace('₹', '') || '50K'}
+            {/* PRIZE POOL */}
+            <div className="bg-[#fddc00] text-[#1a1a1a] p-8 sm:p-10 comic-border-thick shadow-comic-xl transform rotate-2 text-center relative overflow-hidden">
+              <div className="font-anton text-6xl sm:text-8xl text-[#bb0013] font-extrabold tracking-tighter mb-2">
+                {editable ? <E value={stats?.prizePool || ''} path="stats.prizePool" as="span" /> : stats?.prizePool || '₹50K'}
               </div>
-              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">PRIZE POOL</div>
+              <div className="font-anton text-2xl sm:text-3xl tracking-wider text-[#bb0013] mt-2 font-extrabold uppercase">
+                PRIZE POOL
+              </div>
+              <p className="font-bricolage text-sm sm:text-base font-semibold mt-3 text-[#1a1a1a]/80">
+                Cash, Mentorship & Incubation
+              </p>
             </div>
 
-            <div className="bg-white p-6 comic-border-thick shadow-comic transform -rotate-1">
-              <div className="font-anton text-6xl text-[#1a1a1a]">
-                {editable ? <E value={stats?.events || ''} path="stats.events" as="span" /> : stats?.events || '15'}+
+            {/* EVENTS */}
+            <div className="bg-white text-[#1a1a1a] p-8 sm:p-10 comic-border-thick shadow-comic-xl transform -rotate-2 text-center relative overflow-hidden">
+              <div className="font-anton text-6xl sm:text-8xl text-[#bb0013] font-extrabold tracking-tighter mb-2">
+                {editable ? <E value={stats?.events || ''} path="stats.events" as="span" /> : stats?.events || '20'}+
               </div>
-              <div className="font-anton text-xl tracking-wider text-[#bb0013] mt-1">EVENTS</div>
+              <div className="font-anton text-2xl sm:text-3xl tracking-wider text-[#bb0013] mt-2 font-extrabold uppercase">
+                EVENTS
+              </div>
+              <p className="font-bricolage text-sm sm:text-base font-semibold mt-3 text-[#1a1a1a]/80">
+                Technical & Civilian Challenges
+              </p>
             </div>
 
           </div>
