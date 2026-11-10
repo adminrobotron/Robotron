@@ -145,19 +145,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
       {/* ZAP! EVENT SCHEDULE PREVIEW */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
-          <div className="flex items-center gap-3">
-            <div className="bg-[#fddc00] text-[#1a1a1a] font-anton text-2xl sm:text-3xl px-4 py-1.5 comic-border-thick shadow-comic transform -skew-x-6">
-              ZAP!
-            </div>
-            <h2 className="font-anton text-3xl sm:text-5xl text-[#1a1a1a]">EVENT SCHEDULE</h2>
+        <div className="flex items-center gap-3 mb-8">
+          <div className="bg-[#fddc00] text-[#1a1a1a] font-anton text-2xl sm:text-3xl px-4 py-1.5 comic-border-thick shadow-comic transform -skew-x-6">
+            ZAP!
           </div>
-          <button
-            onClick={() => setActiveTab('schedule')}
-            className="flex items-center gap-2 font-anton text-lg text-[#bb0013] hover:underline"
-          >
-            VIEW FULL TIMELINE <ArrowRight className="w-5 h-5" />
-          </button>
+          <h2 className="font-anton text-3xl sm:text-5xl text-[#1a1a1a]">EVENT SCHEDULE</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -212,6 +204,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab, onSelectEvent,
             </div>
           </div>
 
+        </div>
+
+        <div className="flex justify-end mt-8">
+          <button
+            onClick={() => setActiveTab('schedule')}
+            className="flex items-center gap-2 font-anton text-lg text-[#bb0013] hover:underline"
+          >
+            VIEW FULL TIMELINE <ArrowRight className="w-5 h-5" />
+          </button>
         </div>
 
       </section>
