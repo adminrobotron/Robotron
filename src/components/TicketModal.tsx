@@ -14,7 +14,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({ registration, regId, o
   const techEvt = TECHNICAL_EVENTS.find(e => e.id === registration.selectedTechEventId);
   const nonTechEvt = CIVILIAN_EVENTS.find(e => e.id === registration.selectedNonTechEventId);
 
-  const totalFee = registration.baseFee + (techEvt?.fee || 0);
+  const totalFee = registration.baseFee + (techEvt?.fee || 0) + (nonTechEvt?.fee || 0);
 
   const passUrl = `https://atlantix2k26.vercel.app/pass.html?id=${regId}&team=${encodeURIComponent(leader.fullName || 'Team')}&event=${encodeURIComponent(techEvt?.title || 'Robotron 2027')}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${regId}`;

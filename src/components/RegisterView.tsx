@@ -187,7 +187,7 @@ export const RegisterView: React.FC<RegisterViewProps> = ({
                     <option value="">-- NONE --</option>
                     {CIVILIAN_EVENTS.map((evt) => (
                       <option key={evt.id} value={evt.id}>
-                        {evt.code} - {evt.title} (FREE)
+                        {evt.code} - {evt.title} (₹{evt.fee})
                       </option>
                     ))}
                   </select>
@@ -364,7 +364,9 @@ export const RegisterView: React.FC<RegisterViewProps> = ({
 
                 <div className="flex justify-between items-center py-2 border-b border-zinc-200">
                   <span className="text-zinc-700">NON-TECHNICAL EVENT</span>
-                  <span className="font-anton text-lg text-[#00c853]">FREE</span>
+                  <span className="font-anton text-lg text-[#00c853]">
+                    {selectedNonTechEvent ? `+ ₹${selectedNonTechEvent.fee}` : '₹0'}
+                  </span>
                 </div>
 
                 <div className="pt-2 border-t-4 border-[#1a1a1a] flex justify-between items-center">

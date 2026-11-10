@@ -35,7 +35,8 @@ export const TeamDashboard: React.FC<TeamDashboardProps> = ({
   const selectedTechEvent = TECHNICAL_EVENTS.find(e => e.id === (preselectedTechId || team?.selectedTechEventId));
   const selectedNonTechEvent = CIVILIAN_EVENTS.find(e => e.id === (preselectedNonTechId || team?.selectedNonTechEventId));
   const techFee = selectedTechEvent?.fee || 0;
-  const totalFee = 50 + techFee;
+  const nonTechFee = selectedNonTechEvent?.fee || 0;
+  const totalFee = 50 + techFee + nonTechFee;
 
   // No team — show create/join choice
   if (!team) {
@@ -224,7 +225,7 @@ export const TeamDashboard: React.FC<TeamDashboardProps> = ({
             >
               <option value="">-- NONE --</option>
               {CIVILIAN_EVENTS.map(evt => (
-                <option key={evt.id} value={evt.id}>{evt.code} - {evt.title} (FREE)</option>
+                <option key={evt.id} value={evt.id}>{evt.code} - {evt.title} (₹{evt.fee})</option>
               ))}
             </select>
             {selectedNonTechEvent && (
@@ -254,7 +255,9 @@ export const TeamDashboard: React.FC<TeamDashboardProps> = ({
           </div>
           <div className="flex justify-between items-center py-2 border-b border-zinc-200">
             <span className="text-zinc-700">NON-TECHNICAL EVENT</span>
-            <span className="font-anton text-lg text-[#00c853]">FREE</span>
+            <span className="font-anton text-lg text-[#00c853]">
+              {selectedNonTechEvent ? `+ ₹${selectedNonTechEvent.fee}` : '₹0'}
+            </span>
           </div>
           <div className="pt-2 border-t-4 border-[#1a1a1a] flex justify-between items-center">
             <span className="font-anton text-2xl text-[#1a1a1a]">TOTAL</span>
