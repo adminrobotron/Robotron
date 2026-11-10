@@ -17,6 +17,7 @@ import { OnboardingForm } from './components/OnboardingForm';
 import { TeamDashboard } from './components/TeamDashboard';
 import { AdminView } from './components/AdminView';
 import { EventDetailModal } from './components/EventDetailModal';
+import { ProfileView } from './components/ProfileView';
 import { Save, Loader2, CheckCircle2, Eye, Undo2, Redo2 } from 'lucide-react';
 
 export function App() {
@@ -34,6 +35,7 @@ export function App() {
   const [adminLoading, setAdminLoading] = useState(false);
   const [adminError, setAdminError] = useState('');
   const [adminSection, setAdminSection] = useState<NavTab>('home');
+  const [showProfile, setShowProfile] = useState(false);
   const [adminControls, setAdminControls] = useState<{
     onUndo: () => void;
     onRedo: () => void;
@@ -199,6 +201,7 @@ export function App() {
       userProfile={userProfile}
       team={team}
       onSignOut={handleSignOut}
+      onProfileClick={() => setShowProfile(true)}
       rightContent={activeTab === 'admin' && adminControls ? (
         <div className="flex items-center gap-2">
           <div className="flex items-center bg-zinc-800 rounded overflow-hidden">
@@ -337,6 +340,15 @@ export function App() {
           onSelectForRegistration={handleSelectEventForRegistration}
         />
       )}
+
+      <ProfileView
+        open={showProfile}
+        onClose={() => setShowProfile(false)}
+        user={user}
+        userProfile={userProfile}
+        team={team}
+        onSignOut={handleSignOut}
+      />
 
     </div>
   );

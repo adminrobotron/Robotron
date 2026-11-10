@@ -15,11 +15,12 @@ interface NavbarProps {
   userProfile?: UserProfile | null;
   team?: Team | null;
   onSignOut?: () => void;
+  onProfileClick?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab, setActiveTab, editable, activeSection, onNavClick, rightContent,
-  user, userProfile, team, onSignOut
+  user, userProfile, team, onSignOut, onProfileClick
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -103,29 +104,13 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (user) {
       return (
         <div className="flex items-center gap-2">
-          {team && (
-            <span
-              className="bg-[#fddc00] text-[#1a1a1a] font-anton text-[10px] px-2 py-0.5 comic-border-thick cursor-pointer select-none"
-              title="Copy team code"
-              onClick={() => {
-                navigator.clipboard.writeText(team.teamCode);
-              }}
-            >
-              {team.teamCode}
-            </span>
-          )}
-          <div className="bg-white comic-border-thick shadow-comic-sm flex items-center gap-2 px-2 py-0.5">
-            <div className="w-5 h-5 bg-[#bb0013] text-white font-anton text-[9px] flex items-center justify-center rounded-full shrink-0">
+          <div
+            onClick={onProfileClick}
+            className="bg-white comic-border-thick shadow-comic-sm flex items-center justify-center cursor-pointer"
+          >
+            <div className="w-6 h-6 bg-[#bb0013] text-white font-anton text-[10px] flex items-center justify-center rounded-full shrink-0">
               {(user.displayName || user.email || 'U').charAt(0).toUpperCase()}
             </div>
-            <span className="font-bricolage text-xs font-bold text-[#1a1a1a] hidden sm:inline max-w-[120px] truncate">
-              {user.displayName || user.email?.split('@')[0]}
-            </span>
-            <button onClick={onSignOut}
-              className="p-1 bg-white comic-border-thick shadow-comic-sm text-[#1a1a1a] cursor-pointer shrink-0"
-              title="Sign out">
-              <LogOut className="w-3.5 h-3.5" />
-            </button>
           </div>
           {mobileToggle}
         </div>
